@@ -1,0 +1,32 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:AvaloniaFontFamilyBinding.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="125"
+    x:Class="AvaloniaFontFamilyBinding.Views.MainWindow"
+    FontFamily="{Binding FontFamilyA}"
+    MinHeight="125" MinWidth="300"
+    MaxHeight="125" MaxWidth="300"
+    Title="Avalonia FontFamily Binding Issue">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <StackPanel
+        Margin="8"
+        Spacing="6">
+        <TextBlock Text="Using FontFamily From &lt;Window&gt;" />
+        <Button
+            Command="{Binding SwitchFontFamilyACommand}"
+            Content="Switch &lt;Window&gt;&apos;s FontFamily" />
+
+        <TextBlock Text="Using FontFamily from &lt;TextBlock&gt;" FontFamily="{Binding FontFamilyB}" />
+        <Button
+            Command="{Binding SwitchFontFamilyBCommand}"
+            Content="Switch &lt;TextBlock&gt;&apos;s FontFamily" />
+    </StackPanel>
+
+</Window>
